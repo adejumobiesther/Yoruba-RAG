@@ -19,7 +19,7 @@ def question_db(query):
     db = Chroma.from_documents(docs, embeddings)
     retriever = db.as_retriever()
     docs = retriever.get_relevant_documents(query)
-    llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0, openai_api_key=openai.api_key)
+    llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
     qa_chain = load_qa_chain(llm, chain_type="stuff")
     qa = RetrievalQA(combine_documents_chain=qa_chain,
                      retriever=retriever)
@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     outputs = gr.outputs.Textbox()
 
-    app = gr.Interface(fn=question_db, inputs='text', outputs=outputs,description="This is a question answering model regarding the yoruba language and culture").launch()
+    app = gr.Interface(fn=question_db, inputs='text', outputs='text',description="This is a question answering model regarding the yoruba language and culture").launch()
 
 
 
