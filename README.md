@@ -8,7 +8,7 @@ Yoruba-RAG is a project aimed at enhancing the responses of large language model
 
 ### 1. Web Scraping
 
-To gather relevant data, I performed web scraping from a Yorubablog [https://www.theyorubablog.com/] using the Beautiful Soup library. The scraped data was then saved to a text file for further processing.
+To gather relevant data, I performed web scraping from a [Yorubablog] (https://www.theyorubablog.com/) using the Beautiful Soup library. The scraped data was then saved to a text file for further processing.
 
 ### 2. Data Chunking
 
